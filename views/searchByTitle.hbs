@@ -1,0 +1,24 @@
+<h2>Search Movie by Title</h2>
+
+<!-- Form for searching a movie by title -->
+<form action="/data/search/title" method="GET">
+    <label for="movieTitle">Enter Movie Title:</label>
+    <input type="text" id="movieTitle" name="movieTitle" required>
+    <button type="submit">Search</button>
+</form>
+
+<!-- Display search results or error messages -->
+{{#if movies}}
+    <h3>Movies Found:</h3>
+    <ul>
+        {{#each movies}}
+            <li>
+                <strong>Title:</strong> {{this.Title}}, 
+                <strong>Year:</strong> {{this.Year}}, 
+                <strong>Genre:</strong> {{this.Genre}}
+            </li>
+        {{/each}}
+    </ul>
+{{else if error}}
+    <p>{{error}}</p>
+{{/if}}

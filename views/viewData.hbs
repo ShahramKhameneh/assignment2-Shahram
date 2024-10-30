@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>{{title}}</header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Movie ID</th>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Genre</th>
+                    <th>Director</th>
+                    <th>Box Office</th>
+                    <th>Website</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each movies}}
+                <!-- If filter is true, only show rows where Website is valid; otherwise, show all rows -->
+                    {{#if (or (not ../filter) (hasWebsite this.Website))}}
+                    <tr class="{{#if (and ../highlight (highlightRow this.Website))}}highlight{{/if}}">
+                    <td>{{this.Movie_ID}}</td>
+                    <td>{{this.Title}}</td>
+                    <td>{{this.Year}}</td>
+                    <td>{{this.Genre}}</td>
+                    <td>{{this.Director}}</td>
+                    <td>{{this.BoxOffice}}</td>
+                    <td>
+                        {{#if this.Website}}
+                            <a href="{{this.Website}}" target="_blank">{{this.Website}}</a>
+                        {{else}}
+                            N/A
+                        {{/if}}
+                    </td>
+                </tr>
+                {{/if}}
+                {{/each}}
+            </tbody>
+        </table>
+    </main>
+    <footer>&copy; 2024 Sales Data</footer>
+</body>
+</html>

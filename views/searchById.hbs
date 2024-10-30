@@ -1,0 +1,20 @@
+<h2>Search Movie by ID</h2>
+
+<!-- Form for searching a movie by ID -->
+<form action="/data/search/id" method="get">
+    <label for="movieId">Enter Movie ID:</label>
+    <input type="text" id="movieId" name="movieId" required>
+    <button type="submit">Search</button>
+</form>
+
+<!-- Display search results or error messages -->
+{{#if movie}}
+    <div>
+        <h3>Movie Found:</h3>
+        <p><strong>Title:</strong> {{movie.Title}}</p>
+        <p><strong>Year:</strong> {{movie.Year}}</p>
+        <p><strong>Genre:</strong> {{movie.Genre}}</p>
+    </div>
+{{else if error}}
+    <p>{{error}}</p>
+{{/if}}
