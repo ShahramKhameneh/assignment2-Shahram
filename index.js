@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Load JSON data
-const jsonData = require('../movieData.json'); // Use the correct relative path
+const jsonData = require('./movieData.json'); // Use the correct relative path
 
 // Configure Handlebars with custom helpers
 app.engine('hbs', exphbs({
@@ -127,5 +127,5 @@ app.use((req, res) => {
 
 // Start the server and listen on the specified port
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server IS running on http://localhost:${port}`);
 });
