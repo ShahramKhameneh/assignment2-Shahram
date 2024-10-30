@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Load JSON data
-const jsonData = require('./movieData.json'); // Use the correct relative path
+const jsonData = require('../movieData.json'); // Use the correct relative path
 
 // Configure Handlebars with custom helpers
 app.engine('hbs', exphbs({
