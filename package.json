@@ -2,7 +2,7 @@
   "name": "asn2-shahram",
   "version": "1.0.0",
   "description": "assignment ",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"

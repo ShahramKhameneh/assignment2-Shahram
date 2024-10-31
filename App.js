@@ -63,10 +63,10 @@ app.get('/data', (req, res) => {
 // Search by ID (POST request to handle form submission)
 app.get('/data/search/id', (req, res) => {
   const movieId = parseInt(req.query.movieId, 10); // Convert movieId to integer
-  console.log('Searching for Movie ID:', movieId);
+ // console.log('Searching for Movie ID:', movieId);
 
   const movie = jsonData.find(item => item.Movie_ID === movieId); // Compare as integer
-  console.log('Movie found:', movie);
+  //console.log('Movie found:', movie);
 
   if (movie) {
       res.render('searchById', { title: 'Search by ID', movie });
